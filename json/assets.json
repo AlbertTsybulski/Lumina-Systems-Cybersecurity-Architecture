@@ -1,0 +1,50 @@
+{
+    "security_logs": {
+        "display": "Security Logs/Videos",
+        "crown_jewel": false,
+        "cia": "Integrity",
+        "value": "Moderate"
+    },
+    "ai_power_infrastructure": {
+        "display": "AI Power Infrastructure",
+        "crown_jewel": false,
+        "cia": "Availability",
+        "value": "High"
+    },
+    "customer_data": {
+        "display": "Customer Data",
+        "crown_jewel": false,
+        "cia": "Confidentiality",
+        "value": "High"
+    },
+    "source_code": {
+        "display": "Core Source Code and Detection Engines",
+        "crown_jewel": true,
+        "cia": "Integrity",
+        "value": "High"
+    },
+    "threat_intelligence": {
+        "display": "Proprietary Threat Intelligence and Behavior Models",
+        "crown_jewel": true,
+        "cia": "Confidentiality",
+        "value": "High"
+    },
+    "patent_portfolios": {
+        "display": "Patent Portfolios & Cryptographic IP",
+        "crown_jewel": true,
+        "cia": "Confidentiality",
+        "value": "High"
+    },
+    "production_servers": {
+        "display": "Production Servers",
+        "crown_jewel": false,
+        "cia": "Availability",
+        "value": "High"
+    },
+    "employee_access_endpoints": {
+        "display": "Employee Access Endpoints",
+        "crown_jewel": false,
+        "cia": "Confidentiality",
+        "value": "Moderate"
+    }
+}
