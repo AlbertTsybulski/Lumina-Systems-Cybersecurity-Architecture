@@ -1,0 +1,65 @@
+{
+    "Physical Access": {
+        "policy": [
+            "Employees must badge individually into restricted areas ",
+            "and may not admit another person using their credential."
+        ],
+        "risk": "Piggybacking, tailgating, unauthorized physical access",
+        "controls": "Badge readers, vestibules, awareness, monitoring"
+    },
+    "Visitors and Vendors": {
+        "policy": [
+            "Visitors must verify identity, receive temporary identification, ",
+            "remain in approved areas, and be escorted in restricted zones."
+        ],
+        "risk": "Unauthorized physical access",
+        "controls": "Reception procedures, visitor badges, escorts"
+    },
+    "Workstation Security": {
+        "policy": [
+            "Unattended devices must be locked and sensitive information ",
+            "must not remain unnecessarily exposed."
+        ],
+        "risk": "Shoulder surfing and physical information exposure",
+        "controls": "Screen locks, privacy filters, workstation positioning"
+    },
+    "Authentication and Authorization": {
+        "policy": [
+            "TitanTech uses unique credentials, MFA where appropriate, ",
+            "RBAC, least privilege, and need-to-know."
+        ],
+        "risk": "Unauthorized digital access",
+        "controls": "MFA, RBAC, least privilege"
+    },
+    "Removable Media": {
+        "policy": [
+            "Unapproved removable media is prohibited on restricted systems. ",
+            "Ports may be disabled where business need does not require them."
+        ],
+        "risk": "Unauthorized physical device or port access",
+        "controls": "Endpoint policy, port restrictions, endpoint controls"
+    },
+    "Document Disposal": {
+        "policy": [
+            "Sensitive paper must be placed in approved locked destruction ",
+            "containers and may not be placed in ordinary trash."
+        ],
+        "risk": "Dumpster diving and information exposure",
+        "controls": "Locked destruction bins, shredding, clean-desk policy"
+    },
+    "Power and Continuity": {
+        "policy": 
+            ["Critical systems use UPS and surge protection. Selected services ",
+            "receive generator support, backups, and tested recovery procedures."],
+        "risk": "Power and environmental disruption",
+        "controls": "UPS, surge protection, generator, backups, recovery"
+    },
+    "Monitoring and Reporting": {
+        "policy": [
+            "Employees must report suspicious activity. Alerts trigger ",
+            "investigation and do not automatically prove compromise or intent."
+        ],
+        "risk": "Delayed or inaccurate attack detection",
+        "controls": "Logging, cameras, access records, employee reporting"
+    }
+}

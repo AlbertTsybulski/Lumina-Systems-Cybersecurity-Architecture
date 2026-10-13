@@ -1,0 +1,112 @@
+[
+    {
+        "id": "11",
+        "asset": "Security Logs/Videos",
+        "vulnerability": "Attackers can insert malicious code or fake entries into logs; Many IP cameras use weak passwords and outdated firmware.",
+        "threat": "Physical device access.",
+        "likelihood": 4,
+        "impact": 5,
+        "controls": "Use MFA + mandated strong passwords for IP cameras; Manage logs in a secured and centralized system.",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    },
+    {
+        "id": "12",
+        "asset": "Office Desktops",
+        "vulnerability": "An employee leaves their computer open while going on a bathroom break",
+        "threat": "Piggybacking",
+        "likelihood": 3,
+        "impact": 5,
+        "controls": "Raise awareness for this risk and tell employees to lock their computer to protect company and personal data.",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    },
+    {
+        "id": "13",
+        "asset": "Power Infrastructure",
+        "vulnerability": "Stress from extreme weather and increasing electricity demand.",
+        "threat": "Environmental disruption",
+        "likelihood": 3,
+        "impact": 3,
+        "controls": "Upgrade stronger materials, bury selected critical lines in high-risk areas, and use drones and AI analysis to spot any weaknesses",
+        "residual": "Low",
+        "response": "Mitigate"
+    },
+    {
+        "id": "14",
+        "asset": "Garbage and Dumpsters",
+        "vulnerability": "Throwing out packages can show what the company has inside.",
+        "threat": "Dumpster diving",
+        "likelihood": 3,
+        "impact": 5,
+        "controls": "Ensure anything thrown out has been broken down or any labels have been properly ripped off.",
+        "residual": "Low",
+        "response": "Mitigate"
+    },
+    {
+        "id": "R5",
+        "asset": "identity_access_system",
+        "vulnerability": "A copied access badge could be presented.",
+        "threat": "Card cloning",
+        "likelihood": 2,
+        "impact": 5,
+        "controls": "Secondary verification + revocation + access-log monitoring",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    },
+    {
+        "id": "R6",
+        "asset": "employee_endpoints",
+        "vulnerability": "USB or device ports may be physically reachable.",
+        "threat": "Unauthorized physical device or port access",
+        "likelihood": 3,
+        "impact": 4,
+        "controls": "Restrict removable media + endpoint controls",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    },
+    {
+        "id": "R7",
+        "asset": "power_infrastructure",
+        "vulnerability": "Critical services depend on continuous power.",
+        "threat": "Power or environmental disruption",
+        "likelihood": 3,
+        "impact": 5,
+        "controls": "UPS + surge protection + selected generator support",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    },
+    {
+        "id": "R8",
+        "asset": "robot_control_source",
+        "vulnerability": "Credentials may be weak, reused, or compromised.",
+        "threat": "Unauthorized digital access",
+        "likelihood": 3,
+        "impact": 5,
+        "controls": "MFA + unique credentials + RBAC + least privilege",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    },
+    {
+        "id": "R9",
+        "asset": "customer_data",
+        "vulnerability": "Employees may be manipulated by deceptive messages.",
+        "threat": "Social engineering",
+        "likelihood": 4,
+        "impact": 5,
+        "controls": "Awareness + verification procedures + MFA + reporting",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    },
+    {
+        "id": "R10",
+        "asset": "production_build_server",
+        "vulnerability": "A critical service could be disrupted.",
+        "threat": "Ransomware or service disruption",
+        "likelihood": 3,
+        "impact": 5,
+        "controls": "Least privilege + protected backups + endpoint controls + recovery",
+        "residual": "Moderate",
+        "response": "Mitigate"
+    }
+]
