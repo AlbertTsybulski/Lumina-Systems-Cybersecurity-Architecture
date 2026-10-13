@@ -1,0 +1,73 @@
+{
+    "badge_vestibule": {
+        "name": "Restricted-Area Badge/Vestibule Upgrades",
+        "cost": 70000,
+        "type": "Physical",
+        "function": "Preventative",
+        "risks": ["R1", "R2", "R5"]
+    },
+    "camera_monitoring": {
+        "name": "Camera + Door-Open Monitoring",
+        "cost": 35000,
+        "type": "Physical",
+        "function": "Detective",
+        "risks": ["R1", "R2", "R5"]
+    },
+    "ups": {
+        "name": "UPS + Surge Protection",
+        "cost": 30000,
+        "type": "Technical",
+        "function": "Preventative",
+        "risks": ["R7"]
+    },
+    "generator": {
+        "name": "Selected Generator Support",
+        "cost": 45000,
+        "type": "Physical",
+        "function": "Corrective",
+        "risks": ["R7"]
+    },
+    "document_destruction": {
+        "name": "Secure Document Destruction",
+        "cost": 12000,
+        "type": "Managerial",
+        "function": "Preventative",
+        "risks": ["R4"]
+    },
+    "awareness": {
+        "name": "Security Awareness + Visitor Procedures",
+        "cost": 18000,
+        "type": "Managerial",
+        "function": "Preventative",
+        "risks": ["R1", "R9"]
+    },
+    "mfa": {
+        "name": "MFA + Access-Control Improvements",
+        "cost": 25000,
+        "type": "Technical",
+        "function": "Preventative",
+        "risks": ["R5", "R8", "R9"]
+    },
+    "endpoint": {
+        "name": "Endpoint + Removable-Media Controls",
+        "cost": 15000,
+        "type": "Technical",
+        "function": "Preventative",
+        "risks": ["R6", "R10"]
+    },
+
+    "privacy": {
+        "name": "Expanded Privacy-Filter Program",
+        "cost": 10000,
+        "type": "Physical",
+        "function": "Preventative",
+        "risks": ["R3"]
+    },
+    "backup_upgrade": {
+        "name": "Additional Backup/Recovery Upgrade",
+        "cost": 28000,
+        "type": "Technical",
+        "function": "Corrective",
+        "risks": ["R10"]
+    }
+}
