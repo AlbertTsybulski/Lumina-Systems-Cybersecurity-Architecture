@@ -1,0 +1,8 @@
+{
+    "liam": {"name": "Liam Miller", "role": "Receptionist"},
+    "sophia": {"name": "Sophia Rodriguez", "role": "Frontier Research"},
+    "ethan": {"name": "Ethan Chen", "role": "AI Governance"},
+    "maya": {"name": "Maya Patel", "role": "Core Algorithm Coding"},
+    "oliver": {"name": "Oliver Brooks", "role": "Executive"},
+    "zoe": {"name": "Zoe Washington", "role": "Human Evaluator"}
+}
