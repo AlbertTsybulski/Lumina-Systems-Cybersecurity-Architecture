@@ -1,65 +1,115 @@
 {
     "Physical Access": {
         "policy": [
-            "Employees must badge individually into restricted areas ",
-            "and may not admit another person using their credential."
+            "Employees must badge individually into restricted areas and may not admit another person using their credentials.",
+            "Restricted areas require employee badges and, where appropriate, biometric verification and a personal identification number.",
+            "High-value areas, including AI model laboratories, require two-person entry where designated.",
+            "Lobby doors must close automatically after entry, and security personnel must monitor entrances to prevent tailgating."
         ],
-        "risk": "Piggybacking, tailgating, unauthorized physical access",
-        "controls": "Badge readers, vestibules, awareness, monitoring"
+        "risk": "Piggybacking, tailgating, badge cloning, and unauthorized physical access",
+        "controls": "Badge readers, biometric scanners, PIN verification, smart gate mantraps, automatic door closing, restricted access zones, and security monitoring",
+        "residual": "Low to Moderate",
+        "response": "Mitigate"
     },
     "Visitors and Vendors": {
         "policy": [
-            "Visitors must verify identity, receive temporary identification, ",
-            "remain in approved areas, and be escorted in restricted zones."
+            "Visitors must be registered in advance, verify their identity, receive temporary identification, and remain in approved areas.",
+            "Visitors must be escorted whenever they enter restricted zones.",
+            "Reception must record visitor entry and exit, and visitor records must be retained for one year.",
+            "Visitor access must not provide access to source code, AI models, production servers, or other restricted systems."
         ],
-        "risk": "Unauthorized physical access",
-        "controls": "Reception procedures, visitor badges, escorts"
+    "risk": "Unauthorized physical access, social engineering, and exposure of confidential company information",
+    "controls": "Visitor management system, reception identity verification, temporary badges, escorts, access restrictions, and visitor logs",
+    "residual": "Low to Moderate",
+    "response": "Mitigate"
     },
     "Workstation Security": {
         "policy": [
-            "Unattended devices must be locked and sensitive information ",
-            "must not remain unnecessarily exposed."
+            "Employees must lock their workstations whenever unattended.",
+            "All employee endpoints must automatically lock after three minutes of inactivity.",
+            "Privacy filters are mandatory for workstations in open areas and locations where screens may be visible to unauthorized people.",
+            "Employees must not leave source code, customer data, AI research, or other sensitive information exposed."
         ],
-        "risk": "Shoulder surfing and physical information exposure",
-        "controls": "Screen locks, privacy filters, workstation positioning"
+        "risk": "Piggybacking, shoulder surfing, unattended workstation access, and confidential information exposure",
+        "controls": "Automatic screen locks, employee awareness training, privacy filters, workstation positioning, and restricted-area access",
+        "residual": "Moderate",
+        "response": "Mitigate"
     },
     "Authentication and Authorization": {
         "policy": [
-            "TitanTech uses unique credentials, MFA where appropriate, ",
-            "RBAC, least privilege, and need-to-know."
+            "Lumina Systems requires unique user credentials and MFA for internal systems.",
+            "Hardware security keys using FIDO2/WebAuthn must be used where supported by the authentication system.",
+            "Role-based access control (RBAC), least privilege, and need-to-know principles determine resource access.",
+            "Access to source code, AI models, production servers, and administrative consoles must be limited to authorized roles.",
+            "Privilege escalation requires manager approval and must be recorded by the security monitoring system.",
+            "Access badges must be combined with biometric verification and a PIN at designated high-security checkpoints."
         ],
-        "risk": "Unauthorized digital access",
-        "controls": "MFA, RBAC, least privilege"
+        "risk": "Unauthorized digital access, credential theft, privilege abuse, and physical access badge cloning",
+        "controls": "MFA, FIDO2/WebAuthn hardware keys, RBAC, least privilege, biometric verification, PINs, access reviews, and audit logs",
+        "residual": "Moderate",
+        "response": "Mitigate"
     },
     "Removable Media": {
         "policy": [
-            "Unapproved removable media is prohibited on restricted systems. ",
-            "Ports may be disabled where business need does not require them."
+            "Unapproved removable media is prohibited on restricted systems.",
+            "USB ports must be disabled or restricted where business needs do not require removable media.",
+            "Exceptions require explicit authorization from the security team and must be logged.",
+            "Approved devices must undergo malware scanning before use.",
+            "Sensitive data must not be copied to removable storage without documented authorization."
         ],
-        "risk": "Unauthorized physical device or port access",
-        "controls": "Endpoint policy, port restrictions, endpoint controls"
+        "risk": "Malware introduction, unauthorized data transfer, and exposure of proprietary source code or customer data",
+        "controls": "USB port restrictions, endpoint protection, malware scanning, approval procedures, device monitoring, and access logging",
+        "residual": "Moderate",
+        "response": "Mitigate"
     },
     "Document Disposal": {
         "policy": [
-            "Sensitive paper must be placed in approved locked destruction ",
-            "containers and may not be placed in ordinary trash."
+            "Sensitive paper documents must be placed in approved, locked destruction containers and must never enter ordinary trash.",
+            "Packaging and labels that reveal company purchases, equipment details, serial numbers, or internal operations must be destroyed or securely removed before disposal.",
+            "Electronic storage devices must be securely erased or physically destroyed according to their sensitivity."
         ],
-        "risk": "Dumpster diving and information exposure",
-        "controls": "Locked destruction bins, shredding, clean-desk policy"
+        "risk": "Dumpster diving, information disclosure, and exposure of equipment or operational details",
+        "controls": "Locked destruction bins, secure shredding, label removal, approved electronic media destruction, and clean-desk procedures",
+        "residual": "Low",
+        "response": "Mitigate"
     },
     "Power and Continuity": {
-        "policy": 
-            ["Critical systems use UPS and surge protection. Selected services ",
-            "receive generator support, backups, and tested recovery procedures."],
-        "risk": "Power and environmental disruption",
-        "controls": "UPS, surge protection, generator, backups, recovery"
+        "policy": [
+            "Critical computing systems must use UPS and surge protection.",
+            "Selected critical services must receive generator support and have documented recovery procedures.",
+            "Critical data and configurations must be backed up regularly, and recovery procedures must be tested.",
+            "The company must inspect vulnerable power infrastructure and prioritize resilience measures in high-risk areas.",
+            "Power disruptions affecting AI training, production servers, or customer services must be reported and investigated."
+        ],
+    "risk": "Power outages, extreme weather, flooding, equipment damage, and disruption of critical AI services",
+    "controls": "UPS, surge protection, generator support, backups, recovery testing, infrastructure inspections, and environmental monitoring",
+    "residual": "Low to Moderate",
+    "response": "Mitigate"
+    },
+    "Security Logs and Camera Protection": {
+        "policy": [
+            "IP cameras must use strong, unique passwords and MFA where supported.",
+            "Camera firmware must be updated and unsupported devices must be replaced or isolated.",
+            "Security logs must be forwarded to a secured, centralized logging platform.",
+            "Logs must use tamper-resistant storage, such as WORM storage, with access limited to authorized personnel.",
+            "Suspicious changes to camera configurations, missing footage, and unexpected log modifications must be investigated."
+        ],
+        "risk": "Tampered security logs, compromised IP cameras, false security records, and concealed physical intrusions",
+        "controls": "MFA, strong passwords, firmware updates, network segmentation, centralized SIEM logging, WORM storage, and monitoring",
+        "residual": "Moderate",
+        "response": "Mitigate"
     },
     "Monitoring and Reporting": {
         "policy": [
-            "Employees must report suspicious activity. Alerts trigger ",
-            "investigation and do not automatically prove compromise or intent."
+            "Employees must promptly report suspicious activity, unauthorized access attempts, and lost access badges.",
+            "Security events must be recorded and evaluated using documented detection rules.",
+            "Repeated failed access attempts, badge and biometric mismatches, and unusual source code transfers must trigger investigation when established alert thresholds are met.",
+            "Alerts must be investigated before a confirmed-incident decision is made.",
+            "Investigators must distinguish observed evidence from assumptions about compromise or malicious intent."
         ],
-        "risk": "Delayed or inaccurate attack detection",
-        "controls": "Logging, cameras, access records, employee reporting"
+        "risk": "Delayed attack detection, inaccurate security records, undetected unauthorized access, and false-positive alerts",
+        "controls": "Centralized SIEM, tamper-resistant logs, CCTV, badge records, automated detection rules, incident investigation, and employee reporting",
+        "residual": "Moderate",
+        "response": "Mitigate"
     }
 }
