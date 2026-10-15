@@ -1,0 +1,68 @@
+{
+    "Receptionist": [
+        "lobby",
+        "visitor_system",
+        "messaging_hub"
+    ],
+    "Frontier Research": [
+        "lobby",
+        "office",
+        "ai_models",
+        "messaging_hub"
+    ],
+    "AI Governance": [
+        "lobby",
+        "office",
+        "soc_room",
+        "records_room",
+        "ai_models",
+        "messaging_hub"
+    ],
+    "Core Algorithm Coding": [
+        "lobby",
+        "office",
+        "source_repo",
+        "source_code",
+        "build_server",
+        "production_build_server",
+        "messaging_hub"
+    ],
+    "Executive": [
+        "lobby",
+        "office",
+        "business_system",
+        "messaging_hub"
+    ],
+    "Human Evaluator": [
+        "lobby",
+        "office",
+        "ai_models",
+        "messaging_hub"
+    ],
+    "Senior Engineer": [
+        "lobby",
+        "office",
+        "source_repo",
+        "source_code",
+        "build_server",
+        "production_build_server",
+        "messaging_hub"
+    ],
+    "Researcher": [
+        "lobby",
+        "office",
+        "ai_models",
+        "messaging_hub"
+    ],
+    "IT/Security Administrator": [
+        "lobby",
+        "office",
+        "server_room",
+        "soc_room",
+        "admin_console",
+        "build_server",
+        "production_build_server",
+        "messaging_hub"
+    ]
+}
+
