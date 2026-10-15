@@ -4,5 +4,6 @@
     "server_room",
     "soc_room",
     "records_room",
-    "utility_room"
+    "utility_room",
+    "ai_model_lab"
 ]

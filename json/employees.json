@@ -4,5 +4,8 @@
     "ethan": {"name": "Ethan Chen", "role": "AI Governance"},
     "maya": {"name": "Maya Patel", "role": "Core Algorithm Coding"},
     "oliver": {"name": "Oliver Brooks", "role": "Executive"},
-    "zoe": {"name": "Zoe Washington", "role": "Human Evaluator"}
+    "zoe": {"name": "Zoe Washington", "role": "Human Evaluator"},
+    "riley": {"name": "Riley Davis", "role": "Receptionist"},
+    "alex": {"name": "Alex Mercer", "role": "Core Algorithm Coding"},
+    "mark": {"name": "Mark Vance", "role": "Frontier Research"}
 }

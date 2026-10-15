@@ -1,65 +1,42 @@
 {
     "Physical Access": {
-        "policy": [
-            "Employees must badge individually into restricted areas ",
-            "and may not admit another person using their credential."
-        ],
+        "policy": "All restricted rooms such as the server room, SOC, records room, and utility room require employee badges or biometrics to be accessed. Lobby doors use scanners to close automatically after each entry. High-value areas require two-person rule entry.",
         "risk": "Piggybacking, tailgating, unauthorized physical access",
-        "controls": "Badge readers, vestibules, awareness, monitoring"
+        "controls": "Smart Gate mantraps, biometric scanners, automated door readers, security guard monitoring"
     },
     "Visitors and Vendors": {
-        "policy": [
-            "Visitors must verify identity, receive temporary identification, ",
-            "remain in approved areas, and be escorted in restricted zones."
-        ],
-        "risk": "Unauthorized physical access",
-        "controls": "Reception procedures, visitor badges, escorts"
+        "policy": "Visitors must be pre-registered in the visitor management system. Reception issues temporary badges with limited access. Visitor logs are retained for one year and monitored by the SOC team.",
+        "risk": "Unauthorized physical access, credential abuse",
+        "controls": "Visitor management system, reception verification, temporary badges, escorts, SOC monitoring"
     },
     "Workstation Security": {
-        "policy": [
-            "Unattended devices must be locked and sensitive information ",
-            "must not remain unnecessarily exposed."
-        ],
-        "risk": "Shoulder surfing and physical information exposure",
-        "controls": "Screen locks, privacy filters, workstation positioning"
+        "policy": "All employee endpoints auto-lock after 3 minutes of inactivity. Screen privacy filters are mandatory in open areas. Unattended workstations must never be left unlocked or exposed.",
+        "risk": "Shoulder surfing, piggybacking, unattended endpoint compromise",
+        "controls": "3-minute auto-lock, polarized privacy filters, clean-desk policy"
     },
     "Authentication and Authorization": {
-        "policy": [
-            "TitanTech uses unique credentials, MFA where appropriate, ",
-            "RBAC, least privilege, and need-to-know."
-        ],
-        "risk": "Unauthorized digital access",
-        "controls": "MFA, RBAC, least privilege"
+        "policy": "Lumina Systems requires MFA for all internal systems. Hardware-backed identity verification (FIDO2/WebAuthn) and RBAC determine access to source code, AI models, and production servers. Privilege escalation requires manager approval and SOC logging.",
+        "risk": "Unauthorized digital access, credential theft, privilege escalation",
+        "controls": "MFA, FIDO2/WebAuthn hardware keys, RBAC, least privilege, SOC escalation logging"
     },
     "Removable Media": {
-        "policy": [
-            "Unapproved removable media is prohibited on restricted systems. ",
-            "Ports may be disabled where business need does not require them."
-        ],
-        "risk": "Unauthorized physical device or port access",
-        "controls": "Endpoint policy, port restrictions, endpoint controls"
+        "policy": "Sensitive data cannot be copied to removable storage devices under any circumstances unless given explicit permission. Exceptions require SOC approval and automatic malware scanning. USB ports are restricted except for approved devices.",
+        "risk": "Unauthorized physical device or port access, data exfiltration, malware introduction",
+        "controls": "Endpoint port restrictions, SOC exception approval, automated malware scanning"
     },
     "Document Disposal": {
-        "policy": [
-            "Sensitive paper must be placed in approved locked destruction ",
-            "containers and may not be placed in ordinary trash."
-        ],
-        "risk": "Dumpster diving and information exposure",
-        "controls": "Locked destruction bins, shredding, clean-desk policy"
+        "policy": "Sensitive documents, blueprints, and packaging labels must be broken down, shredded, or placed in approved locked destruction containers before disposal.",
+        "risk": "Dumpster diving, physical information leak",
+        "controls": "Locked destruction bins, package label destruction, cross-cut shredding, clean-desk policy"
     },
     "Power and Continuity": {
-        "policy": 
-            ["Critical systems use UPS and surge protection. Selected services ",
-            "receive generator support, backups, and tested recovery procedures."],
-        "risk": "Power and environmental disruption",
-        "controls": "UPS, surge protection, generator, backups, recovery"
+        "policy": "Critical systems use UPS, surge protection, and underground lines. Selected AI services receive generator support, tamper-proof backups, and automated recovery procedures.",
+        "risk": "Power and environmental disruption, service downtime",
+        "controls": "UPS, surge protection, generator support, buried power lines, drone/AI inspection"
     },
     "Monitoring and Reporting": {
-        "policy": [
-            "Employees must report suspicious activity. Alerts trigger ",
-            "investigation and do not automatically prove compromise or intent."
-        ],
-        "risk": "Delayed or inaccurate attack detection",
-        "controls": "Logging, cameras, access records, employee reporting"
+        "policy": "Employees must report suspicious activity immediately. Centralized SIEM with WORM storage records all events and triggers automated alerts without jumping to conclusions prior to analyst investigation.",
+        "risk": "Delayed attack detection, log tampering, insider threat",
+        "controls": "Centralized SIEM engine, WORM storage, automated alert correlation, SOC review"
     }
 }

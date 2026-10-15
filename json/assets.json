@@ -24,7 +24,7 @@
         "value": "High"
     },
     "threat_intelligence": {
-        "display": "Proprietary Threat Intelligence and Behavior Models",
+        "display": "Proprietary Threat Intelligence & Behavior Models",
         "crown_jewel": true,
         "cia": "Confidentiality",
         "value": "High"
