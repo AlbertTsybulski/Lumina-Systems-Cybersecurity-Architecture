@@ -1,0 +1,21 @@
+2026-10-16 12:13:12 | Access             | riley          | lobby                    | ALLOW    | Authorized for role: Receptionist
+2026-10-16 12:13:12 | Access             | riley          | server_room              | DENY     | Role 'Receptionist' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | alex           | source_repo              | ALLOW    | Authorized for role: Core Algorithm Coding
+2026-10-16 12:13:12 | Access             | mark           | admin_console            | DENY     | Role 'Frontier Research' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | unknown_attacker | source_repo              | DENY     | Unknown user - fail closed
+2026-10-16 12:13:12 | Access             | alex           | moon_lab                 | DENY     | Unknown resource - fail closed
+2026-10-16 12:13:12 | Access             | riley          | server_room              | DENY     | Role 'Receptionist' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | riley          | server_room              | DENY     | Role 'Receptionist' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | riley          | server_room              | DENY     | Role 'Receptionist' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | riley          | lobby                    | ALLOW    | Authorized for role: Receptionist
+2026-10-16 12:13:12 | Access             | alex           | source_repo              | ALLOW    | Authorized for role: Core Algorithm Coding
+2026-10-16 12:13:12 | Access             | riley          | server_room              | DENY     | Role 'Receptionist' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | riley          | server_room              | DENY     | Role 'Receptionist' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | riley          | server_room              | DENY     | Role 'Receptionist' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Access             | mark           | admin_console            | DENY     | Role 'Frontier Research' not authorized (Least Privilege)
+2026-10-16 12:13:12 | Physical Detection | smart_gate_sensor | ai_model_lab             | OBSERVATION | 1 badge entry; 2 people observed entering smart gate
+2026-10-16 12:13:12 | Physical Detection | smart_gate_sensor | office                   | NORMAL   | 2 badge entries; 2 people observed
+2026-10-16 12:13:12 | Physical Detection | custodial_report | records_room             | OBSERVATION | Proprietary AI model architecture printout found in standard waste receptacle
+2026-10-16 12:13:12 | Digital Detection  | siem_monitor   | source_repo              | OBSERVATION | 185 MB source code repository download recorded at 02:14 AM
+2026-10-16 12:13:12 | Access             | ethan          | soc_room                 | ALLOW    | Authorized for role: AI Governance
+2026-10-16 12:13:12 | Access             | external_guest | source_repo              | DENY     | Unknown user - fail closed
