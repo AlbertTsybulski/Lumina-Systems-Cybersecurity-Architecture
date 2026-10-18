@@ -15,28 +15,32 @@ EXECUTIVE SECURITY & RISK REPORT
 
 3. SECURITY BUDGET ALLOCATION ($250,000 TOTAL)
   Initial Budget:          $250,000
-  Spent:                   $0
-  Remaining:               $250,000
+  Spent:                   $250,000
+  Remaining:               $0
 
 4. PURCHASED SECURITY CONTROLS
-  * None in current runtime
+  * Smart Gate Mantraps and Biometric Scanners ($85,000) - Physical / Preventative
+  * Hardware Keys and Hardware Security Module ($62,000) - Technical / Preventative
+  * Centralized SIEM Engine and WORM Storage ($48,000) - Technical / Detective
+  * Polarized Privacy Filters and CCTV Upgrade ($30,000) - Physical / Preventative
+  * Cyber Liability and IP Theft Insurance Policy ($25,000) - Managerial / Corrective
 
 5. CONTROL PORTFOLIO BALANCE
-  Physical Controls:       0
-  Technical Controls:      0
-  Managerial Controls:     0
-  Preventative Functions:  0
-  Detective Functions:     0
-  Corrective Functions:    0
+  Physical Controls:       2
+  Technical Controls:      2
+  Managerial Controls:     1
+  Preventative Functions:  3
+  Detective Functions:     1
+  Corrective Functions:    1
 
 6. SECURITY MONITORING & INCIDENT EVIDENCE
-  Events Logged:           0
-  Alerts Generated:        0
+  Events Logged:           12
+  Alerts Generated:        4
   Analyst Investigations:  0
   Confirmed Incidents:     0
 
 7. SECURITY AUDIT FINDINGS
-  * [Moderate] No security budget controls have been purchased in current runtime.
+  * [Moderate] Power continuity and generator support deferred under $250k budget constraint.
 
 8. RESIDUAL RISK & DEFENSIVE STATEMENT
   Controls substantially mitigate physical and digital vectors, but
