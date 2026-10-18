@@ -757,49 +757,61 @@ def investigate_alert():
 
 def audit_security():
     """
-    Audits the current cybersecurity architecture against least privilege,
-    policy completeness, and budget allocations.
+    Audits the architecture against the documented findings in source.md,
+    then checks least privilege, policy completeness, and budget allocations.
     """
     findings = [
         {
+            "id": "AUD-01",
             "severity": "High",
-            "finding": "Security camera telemetry may be transmitted without encryption.",
+            "asset": "Security Logs",
+            "finding": "Unencrypted telemetry stream.",
+            "decision": "Modify Architecture",
             "response": (
-                "Modify architecture: Require encrypted telemetry in camera and edge-device "
-                "configurations and verify the setting during firmware reviews."
+                "Update edge firmware to enforce encryption on all video telemetry."
             ),
         },
         {
+            "id": "AUD-02",
             "severity": "Critical",
             "finding": (
-                "A developer session may remain active after the employee leaves the facility, "
-                "allowing another person with workstation access to manipulate it."
+                "Simultaneous dual-enclave login flaw: a developer who has left the facility "
+                "may still appear digitally active, allowing another person to manipulate "
+                "the session without the developer's knowledge."
             ),
+            "asset": "Core Source Code",
+            "decision": "Modify Architecture",
             "response": (
-                "Modify architecture: Correlate badge exit events with active sessions and "
-                "terminate the session when the developer physically leaves."
+                "Ingest real-time badge events, reduce session evaluation latency to "
+                "milliseconds, and terminate digital activity upon physical exit."
             ),
         },
         {
+            "id": "AUD-03",
             "severity": "Moderate",
             "finding": (
-                "A stolen developer workstation could retain an active hardware-key session "
-                "between cryptographic operations."
+                "Alleged YubiKey session hijacking: a stolen developer workstation could "
+                "retain an active session."
             ),
+            "asset": "Employee Access Endpoints",
+            "decision": "Dispute with Evidence",
             "response": (
-                "Dispute with evidence: Require a physical hardware-key touch for each "
-                "cryptographic operation and retain the corresponding audit record."
+                "Require physical touch on the YubiKey for every individual cryptographic "
+                "operation."
             ),
         },
         {
+            "id": "AUD-04",
             "severity": "Low",
             "finding": (
-                "Secondary server racks may briefly lose power during generator cutover "
-                "because they have a single-grid dependency."
+                "Single-grid power dependency for secondary server enclaves: "
+                "non-essential servers may temporarily lose power during backup cutover."
             ),
+            "asset": "Production Servers",
+            "decision": "Accept Residual Risk",
             "response": (
-                "Accept residual availability risk: Defer the additional flywheel UPS because "
-                "the cost exceeds the current budget; prioritize crown-jewel systems."
+                "The additional industrial-grade flywheel exceeds the budget, so the "
+                "temporary delay is accepted."
             ),
         },
     ]
