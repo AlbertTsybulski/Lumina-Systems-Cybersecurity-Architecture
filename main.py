@@ -548,74 +548,82 @@ def reset_evidence():
 
 def run_model_event_simulation():
     """
-    Simulates 12 security events representing both normal activity
-    and realistic physical/digital attack scenarios.
+    Simulates the 12-event monitoring set documented in sources.md.
     """
     reset_evidence()
 
     print(f"\nRUNNING {COMPANY['name'].upper()} MODEL EVENT SET")
     line()
 
-    # Event 1: Normal authorized physical access
+    # Event 1: Riley enters through the lobby during normal business hours.
     check_access("riley", "lobby")
 
-    # Event 2: Normal authorized digital access
+    # Event 2: Alex accesses the source repository with an authorized device.
     check_access("alex", "source_repo")
 
-    # Events 3-5: Repeated denied physical access attempts
-    check_access("riley", "server_room")
-    check_access("riley", "server_room")
-    check_access("riley", "server_room")
+    # Events 3-5: Three failed server-room badge attempts within 45 seconds.
+    for _ in range(3):
+        check_access("riley", "server_room")
     detect_repeated_denials("riley")
 
-    # Event 6: Unauthorized digital access attempt
+    # Event 6: Mark attempts to access the admin console without sufficient privileges.
     check_access("mark", "admin_console")
 
-    # Event 7: Physical tailgating scenario (1 badge scan, 2 observed entrants)
+    # Event 7: A second person enters the smart gate without a matching credential.
     log_security_event(
-        "smart_gate_sensor",
+        "unknown_individual",
         "ai_model_lab",
         "OBSERVATION",
-        "1 badge entry; 2 people observed entering smart gate",
+        "Two people observed in mantrap; one badge and biometric credential authenticated",
         "Physical Detection",
     )
     detect_possible_following(badge_entries=1, people_observed=2)
 
-    # Event 8: Normal physical entry
+    # Event 8: AI Governance staff member inserts an unapproved USB device.
     log_security_event(
-        "smart_gate_sensor",
+        "ai_governance_staff",
+        "employee_access_endpoints",
+        "DENY",
+        "Unapproved USB flash drive blocked and device interface quarantined",
+        "Removable Media",
+    )
+
+    # Event 9: Whitelisted janitorial activity after business hours.
+    log_security_event(
+        "third_party_janitorial_staff",
         "office",
         "NORMAL",
-        "2 badge entries; 2 people observed",
-        "Physical Detection",
+        "Authorized after-hours cleaning sweep under badge and camera monitoring",
+        "Physical Access",
     )
-    detect_possible_following(badge_entries=2, people_observed=2)
 
-    # Event 9: Document disposal vulnerability observation
+    # Event 10: Blocked 450 MB source-code transfer from an unidentified account.
     log_security_event(
-        "custodial_report",
-        "records_room",
-        "OBSERVATION",
-        "Proprietary AI model architecture printout found in standard waste receptacle",
-        "Physical Detection",
-    )
-    detect_document_exposure(True)
-
-    # Event 10: Digital abnormal repository transfer outside business hours
-    log_security_event(
-        "siem_monitor",
+        "insider_or_compromised_account",
         "source_repo",
-        "OBSERVATION",
-        "185 MB source code repository download recorded at 02:14 AM",
+        "DENY",
+        "450 MB source-code transfer to unidentified external cloud bucket blocked by DLP",
         "Digital Detection",
     )
-    detect_source_code_theft(transfer_mb=185, outside_hours=True)
+    detect_source_code_theft(transfer_mb=450, outside_hours=True)
 
-    # Event 11: Normal authorized administrative/governance access
-    check_access("ethan", "soc_room")
+    # Event 11: Normal power and cooling infrastructure health check.
+    log_security_event(
+        "automated_power_infrastructure_monitor",
+        "ai_power_infrastructure",
+        "NORMAL",
+        "Periodic power infrastructure and cooling grid health check completed",
+        "Availability Monitoring",
+    )
 
-    # Event 12: Unknown external entity fails closed
-    check_access("external_guest", "source_repo")
+    # Event 12: Successful immutable backup of SOC video logs.
+    log_security_event(
+        "automated_security_system_check",
+        "security_logs",
+        "NORMAL",
+        "SOC video logs backed up to immutable storage; modification prevented",
+        "Backup Monitoring",
+    )
 
     print(
         f"Simulation complete: {len(EVENTS)} events recorded, {len(ALERTS)} alerts triggered."
@@ -752,7 +760,49 @@ def audit_security():
     Audits the current cybersecurity architecture against least privilege,
     policy completeness, and budget allocations.
     """
-    findings = []
+    findings = [
+        {
+            "severity": "High",
+            "finding": "Security camera telemetry may be transmitted without encryption.",
+            "response": (
+                "Modify architecture: Require encrypted telemetry in camera and edge-device "
+                "configurations and verify the setting during firmware reviews."
+            ),
+        },
+        {
+            "severity": "Critical",
+            "finding": (
+                "A developer session may remain active after the employee leaves the facility, "
+                "allowing another person with workstation access to manipulate it."
+            ),
+            "response": (
+                "Modify architecture: Correlate badge exit events with active sessions and "
+                "terminate the session when the developer physically leaves."
+            ),
+        },
+        {
+            "severity": "Moderate",
+            "finding": (
+                "A stolen developer workstation could retain an active hardware-key session "
+                "between cryptographic operations."
+            ),
+            "response": (
+                "Dispute with evidence: Require a physical hardware-key touch for each "
+                "cryptographic operation and retain the corresponding audit record."
+            ),
+        },
+        {
+            "severity": "Low",
+            "finding": (
+                "Secondary server racks may briefly lose power during generator cutover "
+                "because they have a single-grid dependency."
+            ),
+            "response": (
+                "Accept residual availability risk: Defer the additional flywheel UPS because "
+                "the cost exceeds the current budget; prioritize crown-jewel systems."
+            ),
+        },
+    ]
 
     # Least privilege check
     if "server_room" in PERMISSIONS.get("Executive", set()):
@@ -997,9 +1047,8 @@ def run_automated_test_suite():
     record("T10", "High risk rating (4 * 5 = 20)", assess_risk(4, 5)[1], "High")
 
     # T11: Repeated denied access alerts
-    check_access("riley", "server_room")
-    check_access("riley", "server_room")
-    check_access("riley", "server_room")
+    for _ in range(3):
+        check_access("riley", "server_room")
     record("T11", "Repeated denials trigger alert", detect_repeated_denials("riley")[0], True)
 
     # T12: Normal physical entry count does not alert

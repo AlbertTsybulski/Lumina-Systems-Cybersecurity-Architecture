@@ -47,5 +47,60 @@
         "type": "Technical",
         "function": "Detective",
         "risks": ["18", "19"]
+    },
+    "third_party_red_team_suite": {
+        "name": "Third-Party Automated Red-Teaming Suite",
+        "cost": 0,
+        "type": "Technical",
+        "function": "Detective",
+        "risks": ["19"],
+        "status": "Rejected",
+        "response": "Avoid",
+        "residual": "Moderate",
+        "justification": "Capabilities were built in-house to avoid the cost of a commercial suite, leaving some niche scenarios less covered."
+    },
+    "underground_utility_rewiring": {
+        "name": "Underground Utility Line Re-Wiring",
+        "cost": 0,
+        "type": "Physical",
+        "function": "Corrective",
+        "risks": ["13"],
+        "status": "Deferred",
+        "response": "Accept",
+        "residual": "Moderate",
+        "justification": "The work exceeded the budget; existing generators and UPS backups provide interim resilience."
+    },
+    "dual_flywheel_ups": {
+        "name": "Dual Flywheel UPS for Secondary Racks",
+        "cost": 0,
+        "type": "Physical",
+        "function": "Corrective",
+        "risks": ["13"],
+        "status": "Rejected",
+        "response": "Accept",
+        "residual": "Low",
+        "justification": "Secondary test servers may briefly reboot during generator cutover, while primary crown-jewel systems receive priority."
+    },
+    "perimeter_guard_detachment": {
+        "name": "Complete Physical Security Perimeter Guard Detachment",
+        "cost": 0,
+        "type": "Physical",
+        "function": "Preventative",
+        "risks": ["15", "16"],
+        "status": "Deferred",
+        "response": "Mitigate",
+        "residual": "Low",
+        "justification": "Automated gates, biometric mantraps, and lobby staff provide the selected control strategy."
+    },
+    "research_workstation_air_gap": {
+        "name": "Full Air-Gapping of Research Workstations",
+        "cost": 0,
+        "type": "Technical",
+        "function": "Preventative",
+        "risks": ["19"],
+        "status": "Rejected",
+        "response": "Accept",
+        "residual": "Moderate",
+        "justification": "Researchers require internet access for external resources, so full isolation would reduce productivity."
     }
 }

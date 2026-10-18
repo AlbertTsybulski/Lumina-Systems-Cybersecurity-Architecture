@@ -86,5 +86,16 @@
         "controls": "Require YubiKeys for all code commits and repository keys with hardware security module for cryptographic signing of build releases.",
         "residual": "Low",
         "response": "Mitigate"
+    },
+    {
+        "id": "19",
+        "asset": "AI Threat Detection Models and Third-Party Software",
+        "vulnerability": "New software vulnerabilities and attacks targeting AI models may provide unauthorized access or allow model behavior to be manipulated.",
+        "threat": "Third-party compromise, zero-day exploitation, or insider misuse of authenticated access",
+        "likelihood": 3,
+        "impact": 5,
+        "controls": "Use automated zero-day threat remediation, security monitoring, hardware-backed authentication, least privilege, and review of third-party dependencies.",
+        "residual": "Moderate",
+        "response": "Mitigate"
     }
 ]
